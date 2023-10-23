@@ -3,8 +3,8 @@ import Blog from "../components/blog";
 
 const Dashboard = () => {
   const user = localStorage.getItem("user");
-const fristname =JSON.parse(user).fristname
-  console.log(fristname)
+const fristname = JSON.parse(user).fristname
+
   
   console.log(JSON.parse(user).fristname)
   const [formdata, setFormdata] = useState({
@@ -19,10 +19,10 @@ const fristname =JSON.parse(user).fristname
       [name]: value,
     });
   };
- let data=1;
+
   const postdata = async () => {
     try {
-      data++
+      
       const response = await fetch("http://localhost:8001/allblogs", {
         method: "post",
         headers: { "Content-Type": "application/json" },
@@ -50,6 +50,7 @@ const fristname =JSON.parse(user).fristname
     <div>
       <div>
         <div className="dash-form">
+          <h1>{fristname}</h1>
           <h2 className="dashtitle">Dashboard</h2>
           <input
             type="text"
